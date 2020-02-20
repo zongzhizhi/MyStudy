@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_creat"
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="创建数据库" />
+
+    <TextView
+        android:id="@+id/tv_updata"
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="更新数据库" />
+
+    <TextView
+        android:id="@+id/tv_add"
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="增加数据" />
+
+    <TextView
+        android:id="@+id/tv_delete"
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="删除数据" />
+
+    <TextView
+        android:id="@+id/tv_change"
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="修改数据" />
+
+    <TextView
+        android:id="@+id/tv_retrieve"
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="查询数据" />
+
+    <TextView
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="数据库剩余数据"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tv_data"
+        style="@style/HomeNavigationCatalogStyle"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/colorPrimaryDark" />
+
+</LinearLayout>
