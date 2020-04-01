@@ -6,27 +6,32 @@
 
     <Button
         android:id="@+id/bt_Add"
-        android:text="增"
-        style="@style/HomeNavigationCatalogStyle" />
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="增" />
 
     <Button
         android:id="@+id/bt_delete"
-        android:text="删"
-        style="@style/HomeNavigationCatalogStyle" />
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="删" />
 
     <Button
         android:id="@+id/bt_updata"
-        android:text="改"
-        style="@style/HomeNavigationCatalogStyle" />
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="改" />
 
     <Button
         android:id="@+id/bt_query"
-        android:text="查"
-        style="@style/HomeNavigationCatalogStyle" />
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="查" />
 
-    <EditText
+    <Button
+        android:id="@+id/bt_loader"
+        style="@style/HomeNavigationCatalogStyle"
+        android:text="loader" />
+
+    <TextView
         android:id="@+id/et_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 </LinearLayout>

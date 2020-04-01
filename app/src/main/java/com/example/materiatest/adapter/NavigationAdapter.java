@@ -33,6 +33,8 @@ public class NavigationAdapter extends RecyclerView.Adapter<NavigationAdapter.Na
     public void onBindViewHolder(@NonNull NavigationHolder navigationHolder, int position) {
         navigationHolder.tv_Name.setText(strings.get(position));
         navigationHolder.tv_Name.setTag(position);
+
+
         navigationHolder.tv_Name.setOnClickListener(this);
     }
 

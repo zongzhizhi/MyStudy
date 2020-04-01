@@ -29,6 +29,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.NatificationActivity"
+            android:parentActivityName=".activity.MainActivity"></activity>
+
+        <activity android:name="com.example.example.activity.OneLifeActivity"></activity>
+
+        <activity android:name="com.example.example.activity.TwoActivty"></activity>
+
+        <activity android:name="com.example.example.activity.ThreeActivity"></activity>
     </application>
 
 </manifest>

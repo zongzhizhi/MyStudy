@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="userNm"
+            type="com.example.mvvm.bean.User" />
+
+        <variable
+            name="mainCkick"
+            type="com.example.mvvm.mvClick.FragmentMainClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_userName"
+            style="@style/HomeNavigationCatalogStyle"
+            android:onClick="@{mainCkick.onclick}"
+            android:text="@{userNm.userName}" />
+
+        <Button
+            android:id="@+id/bt_ages"
+            style="@style/HomeNavigationCatalogStyle"
+            android:onClick="@{mainCkick.LongClick}"
+            android:text="@{userNm.age}" />
+    </LinearLayout>
+</layout>

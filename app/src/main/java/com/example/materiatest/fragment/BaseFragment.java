@@ -14,6 +14,7 @@ import com.example.materiatest.R;
 
 public abstract class BaseFragment extends Fragment {
 
+    private static final String TAG = "BaseFragment";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -38,5 +39,8 @@ public abstract class BaseFragment extends Fragment {
                 .addToBackStack(null)
                 .replace(id, contentFragment, contentFragment.getClass().getName())
                 .commit();
+
     }
+
+
 }

@@ -4,9 +4,11 @@ import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
+import android.database.MergeCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 
 import com.example.materiatest.db.BookDataBaseHelper;
 
@@ -48,6 +50,7 @@ public class MyContentProvider extends ContentProvider {
         SQLiteDatabase database = helper.getWritableDatabase();
         switch (matcher.match(uri)) {
             case BOOK_DIR:
+                Log.i(TAG, "query: " + BOOK_DIR);
                 cursor = database.query(TAB_BOOK, projection, selection, selectionArgs, null,
                         null, sortOrder);
                 break;
@@ -70,10 +73,15 @@ public class MyContentProvider extends ContentProvider {
                         new String[]{categoryId}, null, null, sortOrder);
                 break;
         }
+
+        if(cursor != null){
+            Log.i(TAG, "query: setNotificationUri" + "---->" + uri.toString());
+            cursor.setNotificationUri(getContext().getContentResolver(),uri);
+        }
         return cursor;
     }
 
-
+    private static final String TAG = "123";
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         SQLiteDatabase database = helper.getWritableDatabase();
@@ -90,6 +98,7 @@ public class MyContentProvider extends ContentProvider {
                 returnUri = Uri.parse(CONTENT + AUTHORITIES + "/category/" + newCategory);
                 break;
         }
+        getContext().getContentResolver().notifyChange(uri,null);
         return returnUri;
     }
 
@@ -102,6 +111,7 @@ public class MyContentProvider extends ContentProvider {
         switch (matcher.match(uri)) {
             case BOOK_DIR:
                 updataRows = database.update(TAB_BOOK, values, selection, selectionArgs);
+                Log.i(TAG, "update: "+"---uri --->" + uri.toString());
                 break;
             case BOOK_ITEM:
                 String bookId = uri.getPathSegments().get(1);
@@ -116,7 +126,7 @@ public class MyContentProvider extends ContentProvider {
                         new String[]{categoryId});
                 break;
         }
-
+        getContext().getContentResolver().notifyChange(uri,null);
         return updataRows;
     }
 

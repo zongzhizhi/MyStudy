@@ -1,5 +1,6 @@
 package com.example.materiatest.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -18,6 +19,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private navigationFragment navigationView;
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

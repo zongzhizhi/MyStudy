@@ -1,0 +1,19 @@
+package com.example.example.Interface;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
+public interface BaseLifeCycle {
+    void onCreate(@Nullable Bundle savedInstanceState);
+
+    void onStart();
+
+    void onResume();
+
+    void onPause();
+
+    void onStop();
+
+    void onDestroy();
+
+}
