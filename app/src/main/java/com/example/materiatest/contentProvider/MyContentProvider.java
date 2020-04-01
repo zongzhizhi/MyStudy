@@ -12,6 +12,10 @@ import android.util.Log;
 
 import com.example.materiatest.db.BookDataBaseHelper;
 
+
+/*
+* 内容修改
+* */
 public class MyContentProvider extends ContentProvider {
 
     private static final String CONTENT = "content://";
