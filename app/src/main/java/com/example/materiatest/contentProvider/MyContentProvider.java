@@ -14,11 +14,8 @@ import com.example.materiatest.db.BookDataBaseHelper;
 
 
 /*
-* one内容修改
-* one第二次修改
-* two分支修改
-* 内容修改
-* on最后修改
+*A分支第一次创建
+* A分支第二次commit
 * */
 public class MyContentProvider extends ContentProvider {
 
