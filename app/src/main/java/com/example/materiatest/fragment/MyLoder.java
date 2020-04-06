@@ -34,7 +34,7 @@ public class MyLoder extends CursorLoader {
                 Log.i(TAG, "onChange: ");
             }
         };
-        getContext().getContentResolver().registerContentObserver(uri,true,observer);
+//        getContext().getContentResolver().registerContentObserver(uri,true,observer);
         return cursor;
     }
 

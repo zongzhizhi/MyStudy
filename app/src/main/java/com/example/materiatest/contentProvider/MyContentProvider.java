@@ -61,7 +61,6 @@ public class MyContentProvider extends ContentProvider {
         SQLiteDatabase database = helper.getWritableDatabase();
         switch (matcher.match(uri)) {
             case BOOK_DIR:
-                Log.i(TAG, "query: " + BOOK_DIR);
                 cursor = database.query(TAB_BOOK, projection, selection, selectionArgs, null,
                         null, sortOrder);
                 break;
@@ -86,7 +85,7 @@ public class MyContentProvider extends ContentProvider {
         }
 
         if(cursor != null){
-            Log.i(TAG, "query: setNotificationUri" + "---->" + uri.toString());
+            Log.i(TAG, "query: cursor--->"  + uri.toString());
             cursor.setNotificationUri(getContext().getContentResolver(),uri);
         }
         return cursor;
@@ -122,7 +121,6 @@ public class MyContentProvider extends ContentProvider {
         switch (matcher.match(uri)) {
             case BOOK_DIR:
                 updataRows = database.update(TAB_BOOK, values, selection, selectionArgs);
-                Log.i(TAG, "update: "+"---uri --->" + uri.toString());
                 break;
             case BOOK_ITEM:
                 String bookId = uri.getPathSegments().get(1);
@@ -137,7 +135,10 @@ public class MyContentProvider extends ContentProvider {
                         new String[]{categoryId});
                 break;
         }
-        getContext().getContentResolver().notifyChange(uri,null);
+        if(uri != null){
+            Log.i(TAG, "update:  uri---->" + uri);
+            getContext().getContentResolver().notifyChange(uri,null);
+        }
         return updataRows;
     }
 

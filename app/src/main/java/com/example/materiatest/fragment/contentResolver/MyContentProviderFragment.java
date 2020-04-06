@@ -134,11 +134,12 @@ public class MyContentProviderFragment extends BaseFragment implements View.OnCl
 
             @Override
             public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor cursor) {
+                i=0;
                 Log.i(TAG, "onLoadFinished: " + i);
                 StringBuilder builder = new StringBuilder();
-                if (cursor != null) {
+                if (cursor != null && !cursor.isClosed()) {
 
-                    while (cursor.moveToNext()) {
+                    while (cursor.moveToPosition(i++)) {
                         String name = cursor.getString(cursor.getColumnIndex("name"));
                         String price = cursor.getString(cursor.getColumnIndex("price"));
                         String pages = cursor.getString(cursor.getColumnIndex("pages"));
@@ -150,10 +151,10 @@ public class MyContentProviderFragment extends BaseFragment implements View.OnCl
                                 .append(pages)
                                 .append("\n");
                     }
-                    cursor.close();
+                    et_content.setText(builder.toString());
                 }
 
-                et_content.setText(builder.toString());
+
             }
 
             @Override
