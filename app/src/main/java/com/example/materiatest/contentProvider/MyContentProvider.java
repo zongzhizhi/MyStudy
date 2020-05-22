@@ -15,17 +15,6 @@ import com.example.materiatest.db.BookDataBaseHelper;
 
 /*
 *A分支第一次创建
-* A分支在B分支提交后修改了一笔
-* A分支第二次commit   B分支修改了A分支代码并提交到Master分支
-* B分支第一次创建
-*
-* B分支修改
-* B分支修改的第二次
-* B分并提交了可能的冲突
-*
-*
-* A分支添加AAAAA
-* A分支第二次修改
 * */
 public class MyContentProvider extends ContentProvider {
 
